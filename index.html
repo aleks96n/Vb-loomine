@@ -1,6 +1,14 @@
 <head>
-  <title>Hello world!</title>
+  <title>Sports site</title>
+  <link rel="import" href="html/navbar.html"/>
+  <link rel="stylesheet" href="css/navbarStyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 </head>
 <p>
-  Hello world!
+  <script>
+    var link = document.querySelector('link[rel="import"]');
+    var content = link.import;
+    var el = content.querySelector('.navbar');
+    document.body.appendChild(el.cloneNode(true));
+  </script>
 </p>
