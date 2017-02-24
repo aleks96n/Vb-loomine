@@ -37,3 +37,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 ruby '2.3.1', :engine => 'jruby', :engine_version => '9.1.7.0'
 gem 'rails_12factor', group: :production
 gem 'puma'
+
+group :development do
+  gem 'foreman'
+  gem 'activerecord-jdbcsqlite3-adapter'
+end
