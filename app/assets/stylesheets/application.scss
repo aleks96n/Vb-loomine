@@ -31,3 +31,106 @@
  input {
    height: auto !important;
  }
+
+ .someClass {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+     width: 2000px;
+     overflow: hidden;
+ }
+ #lude {
+     float: left;
+ }
+ #lude a:hover {
+     background-color: #555;
+     color: white;
+ }
+ #lude a {
+     display: block;
+     padding: 8px 16px;
+     background-color: #dddddd;
+     text-decoration: none;
+ }
+
+ .LogInCont{
+     width:250px;
+     height:250px;
+     position:absolute;
+     left:0%;
+     top:13%; //sets top edge at the midway point of it's container
+ }
+
+ .ScoreBoard{
+   width:250px;
+   position:absolute;
+   left:0%;
+   top:50%; //sets top edge at the midway point of it's container
+ }
+ .mhead{
+   width:500px;
+   position:absolute;
+   left:30%;
+   top:13%; //sets top edge at the midway point of it's container
+ }
+ .m1head{
+   width:225px;
+   position:absolute;
+   left:30%;
+   top:70%; //sets top edge at the midway point of it's container
+ }
+ .buttons{
+   width:100px;
+   height:25px;
+   position:absolute;
+   left:30%;
+ }
+
+ .lhead{
+   width:225px;
+   position:absolute;
+   left:50%;
+   top:70%; //sets top edge at the midway point of it's container
+ }
+
+ .shit-body{
+   height:300px;
+ }
+
+ .LogInBody{
+   height:150px;
+ }
+ .main-body{
+   height: 300px;
+ }
+ .main1-body{
+   height: 75px;
+ }
+ .link-body{
+   height: 50px;
+ }
+
+/* footer */
+footer{
+  margin-top:40px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+}
+
+footer a{
+  color:‎#DAA520;
+}
+
+footer a:hover{
+  color:#fff5ee;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li{
+  float: left;
+  margin-left: 15px;
+}
