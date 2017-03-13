@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   require 'securerandom'
+
   def validates_email?
     email.present? || provider.present?
   end
