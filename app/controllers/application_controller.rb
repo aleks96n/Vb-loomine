@@ -11,10 +11,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
   end
 
-  before_filter :set_user_language
+  #before_filter :set_user_language
 
-  private
-  def set_user_language
-    I18n.locale = 'wk'
-  end
+  #private
+  #def set_user_language
+  #  I18n.locale = 'wk'
+  #end
 end

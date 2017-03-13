@@ -20,4 +20,14 @@ class SessionsController < ApplicationController
     end
   end
 
+  def createfb
+      @user = User.find_or_create_from_auth_hash(auth_hash)
+      log_in @user
+      redirect_to root_url
+      end
+
+  def auth_hash
+    request.env['omniauth.auth']
+  end
+
 end

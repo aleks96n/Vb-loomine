@@ -76,13 +76,14 @@
 <div class="login">
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out","/" , id: "sign_out" %>
+    <%= link_to "Sign out","  /" , id: "sign_out" %>
   <% else %>
     <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
 </div>
 
 <div class="else">
-  <h1>hello</h1>
-
+  <% unless current_user.nil? %>
+  <h1><%= current_user.name %></h1>
+  <% end %>
 </div>
