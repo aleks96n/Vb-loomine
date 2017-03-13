@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'sessions/create'
 
   get 'sessions/destroy'
 
@@ -7,6 +6,7 @@ Rails.application.routes.draw do
   get '/about' => 'welcome#about'
   get '/signup' => "users#new"
   get '/login' => "sessions#new"
+  get '/auth/:provider/callback', to: 'sessions#createfb'
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
 
