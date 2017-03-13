@@ -47,3 +47,5 @@ group :development do
   gem 'foreman'
   gem 'activerecord-jdbcsqlite3-adapter'
 end
+
+gem "font-awesome-rails"
