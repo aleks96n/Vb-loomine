@@ -1,5 +1,8 @@
+<p><b>I18n.locale:</b>
+<%=I18n.locale = :ru%>
+</p>
 </div>
-<div class="navbar" >
+<div class="navbar">
   <nav class="navbar navbar-default">
       <ul class = "someClass">
         <li id = "lude"><a href="default.asp"><%=t 'sport.football' %></a></li>
@@ -30,41 +33,12 @@
           <span class = "glyphicon glyphicon-log-in"></span>
           <%=t 'log.login' %></a>
         </li>
-        <li id="lude"><a href="/auth/facebook">
-    <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
-    </a></li>
-
-
-
-
 
         <% end %>
-
-
-     <form class="form-inline my-2 my-lg-0" size="10">
+      <form class="form-inline my-2 my-lg-0">
         <input class="from-control" placeholder="Search"/>
-
+        <button class="btn btn-outline-sucess my-2 my-sm-0">Search</button>
       </form>
       </ul>
     </nav>
 </div>
-<div class="welcometext">
-
-
-<h1 a><%=t 'welcome.title' %></h1>
-</div>
-<div class="login">
-  <% if current_user %>
-    Signed in as <strong><%= current_user.name %></strong>!
-    <%= link_to "Sign out","  /" , id: "sign_out" %>
-  <% end %>
-</div>
-
-<div class="else">
-  <% unless current_user.nil? %>
-  <h1><%= current_user.name %></h1>
-  <% end %>
-</div>
-<a href = "<%=I18n.locale = :en%>">Eng</a>
-<a href = "<%=I18n.locale = :ee%>">Est</a>
-<a href = "<%=I18n.locale = :ru%>">Rus</a>

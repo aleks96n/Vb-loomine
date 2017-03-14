@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   helper :all
   helper_method :current_user
-  I18n.config.available_locales = [:en, :wk]
+  I18n.config.available_locales = [:en, :ru, :ee]
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
@@ -13,8 +13,14 @@ class ApplicationController < ActionController::Base
 
   #before_filter :set_user_language
 
-  #private
-  #def set_user_language
-  #  I18n.locale = 'wk'
-  #end
+
+ before_filter :set_locale
+
+ def set_locale
+   I18n.locale = params[:locale] || I18n.default_locale
+   Rails.application.routes.default_url_options[:locale]= I18n.locale
+ end
+
+
+
 end

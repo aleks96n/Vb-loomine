@@ -1,0 +1,18 @@
+ee:
+    welcome:
+        title: "Tere tulemast TASport"
+    sport:
+        football: "Jalgpall"
+        basketball: "Korvpall"
+        tennis: "Tennis"
+        baseball: "Pesapall"
+        volleyball: "Võrkpall"
+        new: "InsertSport"
+    search:
+        search: "otsi"
+    log:
+        login: "Logi sisse"
+        signup: "Regestreeru"
+    menu:
+        home: "Pealeht"
+        about: "Meist"

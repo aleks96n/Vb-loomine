@@ -21,13 +21,6 @@
    box-sizing:         border-box;
  }
 
-.else{
-  margin-top: 0px;
-
-}
-.login{
-  margin-top: 50px;
-}
 
  input, textarea, select, .uneditable-input {
    border: 1px solid #bbb;
@@ -45,7 +38,7 @@
      list-style-type: none;
      margin: 0;
      padding: 0;
-     width: 2000px;
+
      overflow: hidden;
  }
  #lude {
@@ -143,10 +136,18 @@ footer ul li{
   float: left;
   margin-left: 15px;
 }
- .else{
-   padding: 70px;
- }
- .login{
-   padding: 100px;
-   margin-left:0px;
- }
+.welcometext{
+  text-align: center;
+}
+
+.navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+}
+
+.navbar-nav > li {
+    display: inline-block;
+    float:none;
+}
