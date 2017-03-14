@@ -11,11 +11,8 @@ Rails.application.routes.draw do
   delete '/logout' => "sessions#destroy"
 
 
-  scope "(:locale)", locale: /en|ru/ do
+  scope "(:locale)", locale: /en|ru|ee/ do
     root to: 'welcome#index'
-    post '/ru' => "layouts#header"
-
-    post '/en' => "layouts#rusheader"
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

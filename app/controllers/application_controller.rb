@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   helper :all
   helper_method :current_user
-  I18n.config.available_locales = [:en, :ru, :shit]
+  I18n.config.available_locales = [:en, :ru, :ee]
 
   def current_user
     @current_user ||= User.find(session[:user_id]) if session[:user_id]
