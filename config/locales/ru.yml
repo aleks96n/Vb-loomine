@@ -1,0 +1,20 @@
+---
+ru:
+    welcome:
+        title: "Добро пожаловать на TASport"
+    sport:
+        football: "Футбол"
+        basketball: "Баскетбол"
+        tennis: "Теннис"
+        baseball: "Бейсбол"
+        volleyball: "Волейбол"
+        new: "InsertSport"
+        
+    search:
+        search: "поиск"
+    log:
+        login: "Войти"
+        signup: "Регестрация"
+    menu:
+        home: "На главную"
+        about: "О нас"

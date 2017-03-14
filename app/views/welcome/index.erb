@@ -1,92 +1,66 @@
-<!--
-<div class="menu">
+</div>
+<div class="navbar">
+  <nav class="navbar navbar-default">
+      <ul class = "someClass">
+        <li id = "lude"><a href="default.asp"><%=t 'sport.football' %></a></li>
+        <li id = "lude"><a href="news.asp"><%=t 'sport.basketball' %></a></li>
+        <li id = "lude"><a href="contact.asp"><%=t 'sport.tennis' %></a></li>
+        <li id = "lude"><a href="about.asp"><%=t 'sport.baseball' %></a></li>
+        <li id = "lude"><a href = "#"><%=t 'sport.volleyball' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude">
+          <a href="\signup"><span class = "glyphicon glyphicon-user"></span><%=t 'log.signup' %></a>
+        </li>
+        <% if logged_in? %>
+        <li id = "lude">
+          Signed in as <%= current_user.name %>
+        </li>
+        <li id = "lude">
+           <%= link_to "Log out", logout_path, method: "delete" %>
+        </li>
+        <% else %>
+        <li id = "lude">
+          <a href='\login'>
+          <span class = "glyphicon glyphicon-log-in"></span>
+          <%=t 'log.login' %></a>
+        </li>
 
+        <% end %>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="from-control" placeholder="Search"/>
+        <button class="btn btn-outline-sucess my-2 my-sm-0">Search</button>
+      </form>
+      </ul>
+    </nav>
+</div>
 
-<header>
-       <div class="container" id="menu">
-           <div class="row">
-                <div class="navbar navbar-inverse navbar-fixed-top">
-                    <a class="navbar-brand navbar-left" href="index.php" >Sport</a>
-                        <div class="container">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsive-menu">
-                                    <span class="sr-only">open</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
-                            </div>
-                            <div class="collapse navbar-collapse" id="responsive-menu">
-                                <ul class="nav navbar-nav navbar-center">
-                                    <li><a href="findwork.php"><%  t 'welcome.title' %></a></li>
-                                    <li><a href="addwork.php">Basketball</a></li>
-                                    <li><a href="search.php">Hockey</a></li>
-                                    <li><button type="button" name="button=en" onclick=<% 'set_user_language_en' %> >english</button></li>
-                                    <li><button type="button" name="button=ru" onclick=<% 'set_user_language_ru' %>>russian</button></li>
-                                    <li><form action="http://localhost:3000">
-    <input type="submit" value="Go to Google" />
-</form></li>
-
-
-
-                                </ul>
-
-                                        <ul class="nav navbar-nav navbar-right" >
-                                            <li class="dropdown" >
-                                                <a href="#" class="dropdown-toggle"  data-toggle="dropdown">Войти<span class="caret"></span></a>
-                                                    <ul id="login-dp" class="dropdown-menu" >
-                                                        <li>
-                                                            <div class="row">
-                                                                <div class="col-xs-12" >
-                                                                     <form class="form" method="post"  action="scripts/login.php" accept-charset="UTF-8" id="login-nav">
-                                                                         <div class="form-group" >
-                                                                             <label class="sr-only" for="text" >Логин</label>
-                                                                             <input type="text"  class="form-control" name="login" id="loginText" placeholder="Логин" required>
-                                                                        </div>
-                                                                        <div class="form-group" >
-                                                                             <label class="sr-only" for="exampleInputPassword2">Пароль</label>
-                                                                             <input type="text" class="form-control" id="loginText" name="pass" id="exampleInputPassword2" placeholder="Пароль" required>
-                                                                             <div class="help-block text-center">
-                                                                                 <a href="#">забыл пароль?</a>
-                                                                             </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                             <center><button type="submit" id="buttonLogin" class="btn btn-primary btn-block">Войти</button></center>
-                                                                        </div>
-                                                                    </form>
-                                                                </div>
-                                                             </div>
-                                                        </li>
-                                                    </ul>
-                                                <li>
-                                                    <a href="reg.php">Регистрация</a>
-                                                </li>
-                                            </li>
-                                        </ul>
-                            </div>
-
-
-
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</header>
--->
+<h1><%=t 'welcome.title' %></h1>
 <div class="login">
   <% if current_user %>
     Signed in as <strong><%= current_user.name %></strong>!
     <%= link_to "Sign out","  /" , id: "sign_out" %>
   <% else %>
-    <%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in" %>
+    <%= link_to "Facebook", "/auth/facebook", id: "sign_in" %>
   <% end %>
 </div>
-
+<%= link_to_unless I18n.locale == :en, "English", locale: :en %>
+<a href = "<%=I18n.locale = :en%>">Eng</a>
+<a href = "<%=I18n.locale = :ru%>">Rus</a>
 <div class="else">
   <% unless current_user.nil? %>
   <h1><%= current_user.name %></h1>
   <% end %>
 </div>
+
+
+<p>
+<%= link_to I18n.locale == :en, "English", locale: :en %>
+|
+<%= link_to I18n.locale == :ru, "Russian", locale: :ru %>
+</p>

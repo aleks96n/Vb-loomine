@@ -10,12 +10,19 @@ Rails.application.routes.draw do
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
 
+
+  scope "(:locale)", locale: /en|ru/ do
+    root to: 'welcome#index'
+    post '/ru' => "layouts#header"
+
+    post '/en' => "layouts#rusheader"
+  end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  root 'welcome#index'
   resources :users
 
   # Example of regular route:
