@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
   def createfb
       @user = User.find_or_create_from_auth_hash(auth_hash)
       log_in @user
-      redirect_to root_url
+      redirect_to @user
       end
 
   def auth_hash
