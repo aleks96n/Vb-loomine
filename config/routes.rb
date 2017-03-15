@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'sessions/new'
-  get '/about' => 'welcome#about'
-  get '/signup' => "users#new"
-  get '/login' => "sessions#new"
+  get '/(:locale)/about' => 'welcome#about'
+  get '/(:locale)/signup' => "users#new"
+  get '/(:locale)/login' => "sessions#new"
   get '/auth/:provider/callback', to: 'sessions#createfb'
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"

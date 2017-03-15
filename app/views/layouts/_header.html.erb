@@ -1,0 +1,62 @@
+<% set_locale %>
+
+<div class="navbar" >
+  <nav class="navbar navbar-default">
+      <ul class = "someClass">
+        <li id = "lude"><a href="default.asp"><%=t 'sport.football' %></a></li>
+        <li id = "lude"><a href="news.asp"><%=t 'sport.basketball' %></a></li>
+        <li id = "lude"><a href="contact.asp"><%=t 'sport.tennis' %></a></li>
+        <li id = "lude"><a href="about.asp"><%=t 'sport.baseball' %></a></li>
+        <li id = "lude"><a href = "#"><%=t 'sport.volleyball' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+        <li id = "lude"><a href = "shit.asp"><%=t 'sport.new' %></a></li>
+
+
+        <% if logged_in? %>
+        <li id = "lude">
+          Signed in as <%= current_user.name %>
+        </li>
+        <li id = "lude">
+           <%= link_to "Log out", logout_path, method: "delete" %>
+        </li>
+        <% else %>
+        <li id = "lude">
+          <%= link_to "#{root_path}/signup" do %>
+            <%=content_tag :span, :class => "glyphicon glyphicon-user" do %>
+              <%= t 'log.signup'%>
+            <% end %>
+          <% end %>
+        </li>
+        <li id = "lude">
+          <%= link_to "#{root_path}/login" do %>
+            <%=content_tag :span, :class => "glyphicon glyphicon-log-in" do %>
+              <%= t 'log.login'%>
+            <% end %>
+          <% end %>
+        </li>
+        <li id="lude"><a href="/auth/facebook">
+    <i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i>
+    </a></li>
+
+
+
+
+
+        <% end %>
+
+
+     <form class="form-inline my-2 my-lg-0" size="10">
+        <input class="from-control" placeholder="Search"/>
+
+      </form>
+      </ul>
+    </nav>
+</div>
+<%= link_to 'English', url_for( :locale => 'en' ) %>
+<%= link_to 'Russian', url_for( :locale => 'ru' ) %>
+<%= link_to 'Estonian', url_for( :locale => 'ee' ) %>
