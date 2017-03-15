@@ -17,7 +17,7 @@ en:
         home: "Home"
         about: "About"
     signup:
-      createUser: "Create new user"
-      name: "Name"
-      password: "Password"
-      confirmation: "Confirmation"
+        createUser: "Create new user"
+        name: "Name"
+        password: "Password"
+        confirmation: "Confirmation"

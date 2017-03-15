@@ -4,21 +4,24 @@
 <% provide(:title, 'Sign up') %>
 
 
-<h1>Sign up</h1>
+<%=content_tag :h1 do %>
+  <%=t 'log.signup' %>
+<%end %>
 
 <div class="row">
+
   <div class="col-md-6 col-md-offset-3">
     <%= form_for(@user) do |f| %>
-      <%= f.label :name %>
+      <%= f.label t 'signup.name' %>
       <%= f.text_field :name %>
 
       <%= f.label :email %>
       <%= f.email_field :email %>
 
-      <%= f.label :password %>
+      <%= f.label t 'signup.password' %>
       <%= f.password_field :password %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label t 'signup.confirmation' %>
       <%= f.password_field :password_confirmation %>
 
       <%= f.submit "Create my account", class: "btn btn-primary" %>

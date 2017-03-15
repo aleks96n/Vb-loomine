@@ -19,7 +19,7 @@ ru:
         home: "На главную"
         about: "О нас"
     signup:
-      createUser: "Создать пользователя"
-      name: "Имя"
-      password: "Пароль"
-      confirmation: "Повторите пароль"
+        createUser: "Создать пользователя"
+        name: "Имя"
+        password: "Пароль"
+        confirmation: "Повторите пароль"

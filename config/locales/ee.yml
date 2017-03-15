@@ -16,8 +16,8 @@ ee:
     menu:
         home: "Pealeht"
         about: "Meist"
-   signup:
-     createUser: "Uus kasutaja"
-     name: "Nimi"
-     password: "Salasõna"
-     confirmation: "Kinnitage salasõna"
+    signup:
+        createUser: "Uus kasutaja"
+        name: "Nimi"
+        password: "Salasõna"
+        confirmation: "Kinnitage salasõna"

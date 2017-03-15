@@ -1,14 +1,16 @@
-<hi>Log in</hi>
+<%=content_tag :h1 do %>
+  <%=t 'log.login' %>
+<%end %>
 <div class = "row">
   <div class = "col-md-6 col-md-offset-3">
     <%= form_for(:session, url: login_path) do |f|%>
       <%= f.label :email%>
       <%= f.email_field :email, class: 'from-control' %>
 
-      <%= f.label :password%>
+      <%= f.label t 'signup.password'%>
       <%= f.password_field :password, class: 'from-control' %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit t "log.login", class: "btn btn-primary" %>
     <% end %>
 
   </div>
