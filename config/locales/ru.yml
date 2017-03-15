@@ -9,7 +9,7 @@ ru:
         baseball: "Бейсбол"
         volleyball: "Волейбол"
         new: "InsertSport"
-        
+
     search:
         search: "поиск"
     log:
@@ -18,3 +18,8 @@ ru:
     menu:
         home: "На главную"
         about: "О нас"
+    signup:
+      createUser: "Создать пользователя"
+      name: "Имя"
+      password: "Пароль"
+      confirmation: "Повторите пароль"

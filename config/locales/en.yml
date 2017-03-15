@@ -16,3 +16,8 @@ en:
     menu:
         home: "Home"
         about: "About"
+    signup:
+      createUser: "Create new user"
+      name: "Name"
+      password: "Password"
+      confirmation: "Confirmation"
