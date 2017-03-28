@@ -7,9 +7,10 @@
 <%=content_tag :h1 do %>
   <%=t 'log.signup' %>
 <%end %>
+<br>
 
 <div class="row">
-  <div class="col-md-6 col-md-offset-3">
+  <div class="col-md-6 col-md-offset-0">
     <%= form_for(@user) do |f| %>
       <%= f.label t 'signup.name' %>
       
@@ -137,10 +138,6 @@ $(document).ready(function() {
     });
   
     });
-  
-    }
-
-  
   </script> 
   
  

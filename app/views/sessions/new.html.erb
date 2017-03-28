@@ -1,12 +1,15 @@
 <%=content_tag :h1 do %>
   <%=t 'log.login' %>
 <%end %>
+<br>
+<br>
 <div class = "row">
-  <div class = "col-md-6 col-md-offset-3">
+  <div class = "col-md-6 col-md-offset-0">
     <%= form_for(:session, url: login_path) do |f|%>
       <%= f.label :email%>
       <%= f.email_field :email, class: 'from-control', :id => "validate" %>
-
+<br>
+     <br>
       <%= f.label t 'signup.password'%>
       <%= f.password_field :password, class: 'from-control', :id => "pass" %>
 
