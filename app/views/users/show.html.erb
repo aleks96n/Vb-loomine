@@ -1,10 +1,11 @@
+<% set_locale %>
 <h1>My profile</h1>
 <%
 @user.assign_attributes(profile_image: "http://juliasdesign.com/tutorials/star/13.jpg")
 %><font size="3"><b>Picture: </b></font>
 <img src="#{user.profile_image}" alt="">
 <br>
-<font size="3"><b>Name: </b></font><%= @user.name %> 
+<font size="3"><b>Name: </b></font><%= @user.name %>
 <br>
 <font size="3"><b>E-mail: </b></font><%= @user.email %>
 
@@ -17,7 +18,7 @@
 <div class="row" >
   <div class="col-md-3 col-md-offset-0">
     <%= form_for(@user) do |f| %>
-      
+
 
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
@@ -26,8 +27,19 @@
       <%= f.email_field :email, class: 'form-control' %>
 
       <br>
-
+      <div id='user'>
       <%= f.submit "Save changes", class: "btn btn-primary" %>
+      </div>
+      <div id='popup'>Doesn't do shit</div>
     <% end %>
   </div>
 </div>
+
+
+<script type="text/javascript">
+    $('#user').hover(function() {
+    $('#popup').show();
+}, function() {
+    $('#popup').hide();
+});
+</script>

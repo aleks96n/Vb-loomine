@@ -3,7 +3,6 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'sessions/new'
-  get '/(:locale)/users/1/show' => 'users#show'
   get '/(:locale)/about' => 'welcome#about'
   get '/(:locale)/signup' => "users#new"
   get '/(:locale)/login' => "sessions#new"
