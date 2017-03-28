@@ -3,13 +3,14 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'sessions/new'
+  get '/(:locale)/users/1/show' => 'users#show'
   get '/(:locale)/about' => 'welcome#about'
   get '/(:locale)/signup' => "users#new"
   get '/(:locale)/login' => "sessions#new"
+  get '/(:locale)/show' => "users#show"
   get '/auth/:provider/callback', to: 'sessions#createfb'
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
-
 
   scope "(:locale)", locale: /en|ru|ee/ do
     root to: 'welcome#index'
