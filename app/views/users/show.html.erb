@@ -1,9 +1,9 @@
 <% set_locale %>
 <h1>My profile</h1>
 <%
-@user.assign_attributes(profile_image: "http://juliasdesign.com/tutorials/star/13.jpg")
+#@user.assign_attributes(profile_image: "http://juliasdesign.com/tutorials/star/13.jpg")
 %><font size="3"><b>Picture: </b></font>
-<img src="#{user.profile_image}" alt="">
+<%= image_tag(@user.profile_image) %>
 <br>
 <font size="3"><b>Name: </b></font><%= @user.name %>
 <br>
