@@ -36,11 +36,11 @@
     
     <!-- preloader -->
     <script type="text/javascript">
-        $(window).on('load', function () {
+        $(window).on('turbolinks:load', function () {
             var $preloader = $('#page-preloader'),
             $spinner   = $preloader.find('.spinner');
-            $spinner.fadeOut();
-            $preloader.delay(10).fadeOut('slow');
+            $spinner.delay(1000).fadeOut();
+            $preloader.delay(1000).fadeOut('slow');
         });
     </script>
     
@@ -153,7 +153,7 @@
         <%= render 'layouts/footer' %>
     </div>
 
-    <!--<div id="page-preloader"><span class="spinner"></span></div>-->
+    <div id="page-preloader"><span class="spinner"></span></div>
 </body>
 
 </html>
