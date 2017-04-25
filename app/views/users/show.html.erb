@@ -1,45 +1,32 @@
 <% set_locale %>
+
 <h1>My profile</h1>
-<%
-#@user.assign_attributes(profile_image: "http://juliasdesign.com/tutorials/star/13.jpg")
-%><font size="3"><b>Picture: </b></font>
-<%= image_tag(@user.profile_image) %>
-<br>
+
+<%#@user.assign_attributes(profile_image: "http://juliasdesign.com/tutorials/star/13.jpg")%>
+<font size="3"><b>Picture: </b></font> <%= image_tag(@user.profile_image) %>
+    <br>
 <font size="3"><b>Name: </b></font><%= @user.name %>
-<br>
+    <br>
 <font size="3"><b>E-mail: </b></font><%= @user.email %>
-
-<br>
-<hr>
-<br>
-
+    <br><hr><br>
+    
 <h1>Update your profile</h1>
 
 <div class="row" >
   <div class="col-md-3 col-md-offset-0">
     <%= form_for(@user) do |f| %>
-
-
       <%= f.label :name %>
       <%= f.text_field :name, class: 'form-control' %>
-
+      
       <%= f.label :email %>
       <%= f.email_field :email, class: 'form-control' %>
-
-      <br>
+          <br>
       <div id='user'>
-      <%= f.submit "Save changes", class: "btn btn-primary" %>
+          <%= f.submit "Save changes", class: "btn btn-primary" %>
       </div>
+      
       <div id='popup'>Doesn't do shit</div>
     <% end %>
   </div>
 </div>
 
-
-<script type="text/javascript">
-    $('#user').hover(function() {
-    $('#popup').show();
-}, function() {
-    $('#popup').hide();
-});
-</script>
