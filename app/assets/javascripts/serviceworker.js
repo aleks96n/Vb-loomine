@@ -3,7 +3,11 @@ self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open('offline').then(function(cache) {
             return cache.addAll([
-                '/offline.html'
+                '/offline.html',
+                '/',
+                '/ee',
+                '/ru',
+                '/en'
                 // etc
             ]);
         })
@@ -13,12 +17,19 @@ self.addEventListener('install', function(event) {
 
 
 self.addEventListener('fetch', function(event) {
-    event.respondWith(
-        caches.open('offline').then(function(cache) {
-            return cache.match(event.request).then(function (response) {
-                return response || caches.match("/offline.html");
-            });
-        }));
+
+console.log(event.request.url);
+
+event.respondWith(
+
+caches.match(event.request).then(function(response) {
+
+return response || fetch(event.request);
+
+})
+
+);
+
 });
 
 
