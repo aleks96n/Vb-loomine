@@ -11,7 +11,7 @@
       </button>
       
       <!-- logo -->
-      <a class="navbar-brand" ><img alt="alternative text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sport_balls.svg/400px-Sport_balls.svg.png"/></a>     
+      <a class="navbar-brand" ><img alt="alternative text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sport_balls.svg/400px-Sport_balls.svg.png"/></a>
     </div>
     
     <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
@@ -28,6 +28,7 @@
       
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
+
             <li><a >Signed in as  <font size="4" color="red"><b><%= current_user.name %></b> </font></a></li>
             <li><%= link_to "Log out", logout_path, method: "delete" %></li>
         <% else %>
@@ -73,9 +74,13 @@
         <li ><%= link_to 'English', url_for( :locale => 'en' ) %></li>
         <li ><%= link_to 'Russian', url_for( :locale => 'ru' ) %></li>
         <li ><%= link_to 'Estonian', url_for( :locale => 'ee' ) %></li>
-        
-        <% if logged_in? %><li><%=link_to "#{root_path}/show?id=#{current_user.id}" do %><%=t 'Profile' %><%end%></li><% end %>
-     </ul>
+
+        <% if logged_in? %>
+        <li><%=link_to "#{root_path}/show?id=#{current_user.id}" do %><%=t 'Profile' %><%end%></li>
+        <li><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <% end %>
+
+        </ul>
       <ul class="nav navbar-nav navbar-right">
         <li>
             <ul class="nav navbar-nav animated fadeIn text16">
@@ -84,6 +89,8 @@
             </ul>
         </li>
       </ul>
+
     </div>
   </div>
 </nav>
+
