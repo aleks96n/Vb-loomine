@@ -1,16 +1,3 @@
-  /*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- */
  @import "bootstrap-sprockets";
  @import "bootstrap";
  @import "font-awesome";
@@ -21,7 +8,59 @@
    box-sizing:         border-box;
  }
 
-/*alteracoes da barra de navegacao principal*/
+/* all */
+
+#validEmail
+    {
+    margin-top: 4px;
+    margin-left: 9px;
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    }
+
+
+#popup {
+    height: 50px;
+    width: 200px;
+    text-align: center;
+    vertical-align:middle;
+    background-color: cornflowerblue;
+    color: white;
+    display: none;
+    padding-top: 8px;
+    position: absolute;
+}
+
+
+
+
+/* preloader */
+
+#page-preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    z-index: 100500;
+}
+
+#page-preloader .spinner {
+    width: 300px;
+    height: 300px;
+    position: fixed;
+    left: 35%;
+    top: 20%;
+    background: url('https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/5d79bf38627007.5809c7eab2bee.gif') no-repeat 50% 50%;
+    
+}
+
+
+
+/* footer */
+
 .navbar-brand img {
     max-width: 100%;
     height: 50px;
@@ -44,7 +83,7 @@
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active >a:visited,
 .navbar-inverse .navbar-nav>li:hover>a:hover {
-    background-image: #60B078;
+    
     background: #60B078;
     background-color: #60B078!important;/*necessario para forcar a regra do bootstrap que tem important*/
     color: #FFF;
@@ -124,7 +163,7 @@ ul.nav.navbar-nav.navbar-right:last-child  {
     font-weight: 200;
     background-color: #dadada;
     background-image: none;
-    background-repeat: none;
+    
     -webkit-transition: all  ease-in .3s;
     -o-transition: all  ease-in .3s;
     -moz-transition: all  ease-in .3s;
@@ -329,31 +368,4 @@ ul.nav.navbar-nav.navbar-right:last-child  {
         background-color: inherit;
         border-top:0 none;
     }
-}
-
-
-
-
-#validEmail
-    {
-    margin-top: 4px;
-    margin-left: 9px;
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    }
-
-
-#popup {
-    height: 50px;
-    width: 200px;
-    text-align: center;
-    vertical-align:middle;
-    background-color: cornflowerblue;
-    color: white;
-    display: none;
-    padding-top: 8px;
-    
-
-    position: absolute;
 }

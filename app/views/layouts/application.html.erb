@@ -6,36 +6,154 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
-  <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
   
-  
-  <script type="text/javascript">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+
+
+
+  <!-- email checker -->
+    <script type="text/javascript">
         $(document).ready(function() {
-    $('#email').blur(function() {
+        $('#email').blur(function() {
         if($(this).val() != '') {
             var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
             if(pattern.test($(this).val())){
                 $(this).css({'border' : '1px solid #569b44'});
                 $('#valid').text('Верно');
-            } else {
+            }
+            else {
                 $(this).css({'border' : '1px solid #ff0000'});
                 $('#valid').text('Не верно');
             }
-        } else {
+        } 
+        else {
             $(this).css({'border' : '1px solid #ff0000'});
             $('#valid').text('Поле email не должно быть пустым');
-        }
+            }
+        });
     });
-});
     </script>
+    
+    <!-- preloader -->
+    <script type="text/javascript">
+        $(window).on('turbolinks:load', function () {
+            var $preloader = $('#page-preloader'),
+            $spinner   = $preloader.find('.spinner');
+            $spinner.delay(1000).fadeOut();
+            $preloader.delay(1000).fadeOut('slow');
+        });
+    </script>
+    
+    <!-- email checker -->
+    <script type="text/javascript">
+        $(document).ready(function() {  
+            $("#validate").keyup(function(){
+                var email = $("#validate").val();
+                if(email != 0){
+                    if(isValidEmailAddress(email)){
+                        $("#validate").css({"background-color": "#8FE38F"});
+                    } 
+                    else {
+                        $("#validate").css({"background-color": "#FFAD99"});
+                    }
+                } 
+                else {
+                    $("#validate").css({"background-image": "none"}); 
+                }
+            });
+        });
+        function isValidEmailAddress(emailAddress) {
+            var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+            return pattern.test(emailAddress);
+        }
+    </script>
+    
+    <!-- password checker -->
+    <script type="text/javascript">
+        $(document).ready(function() {  
+            $("#pass").keyup(function(){
+                var pass = $("#pass").val();
+                if(pass != 0){
+                    if(isValidPass(pass)){
+                        $("#pass").css({"background-color": "#8FE38F"});
+                    } 
+                    else {
+                        $("#pass").css({"background-color": "#FFAD99"});
+                    }
+                } 
+                else {
+                    $("#pass").css({"background-image": "none"}); 
+                }
+            });
+        });
+        function isValidPass(pass) {
+            var pattern = new RegExp("..........");
+            return pattern.test(pass);
+        }    
+    </script>
+    
+    <!-- repassword checker -->
+    <script>
+        $(document).ready(function() {  
+            $("#repass").keyup(function(){
+                var repass = $("#repass").val();
+                var pass = $("#pass").val();
+                if(repass != 0){
+                    if(pass == repass){
+                        $("#repass").css({"background-color": "#8FE38F"});
+                    } 
+                    else {
+                        $("#repass").css({
+                            "background-color": "#FFAD99"
+                        });
+                    }
+                } 
+                else {
+                    $("#repass").css({
+                        "background-image": "none"
+                    }); 
+                }
+            });
+        });
+  </script> 
+    
+    <!-- popup -->
+    <script type="text/javascript">
+        $('#user').hover(function() {
+            $('#popup').show();
+        }, function() {
+            $('#popup').hide();
+        });
+    </script>
+    
+    <!-- map -->
+    <script>
+        function myMap() {
+            var myLatLng = {lat:58.378256,lng:26.715112};
+            var map = new google.maps.Map(document.getElementById('googleMap'), {
+                zoom: 17,
+                center: myLatLng
+            });
+            var marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map
+            });
+        }
+    </script>
+    
+    
+    
 </head>
+
+<!-- all pages -->
 <body>
-<div class="container">
-<%= render 'layouts/header' %>
+    <div class="container">
+        <%= render 'layouts/header' %>
+        <%= yield %>
+        <%= render 'layouts/footer' %>
+    </div>
 
-  <%= yield %>
-  <%= render 'layouts/footer' %>
-</div>
-
+    <div id="page-preloader"><span class="spinner"></span></div>
 </body>
+
 </html>

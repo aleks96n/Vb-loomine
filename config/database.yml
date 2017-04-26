@@ -18,7 +18,7 @@ development:
   username: tasports
 
   # The password associated with the postgres role (username).
-  password: federer
+  
 
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
@@ -42,7 +42,7 @@ test:
   <<: *default
   database: tasports_test
   username: tasports
-  password: federer
+  
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -67,4 +67,4 @@ production:
   <<: *default
   database: tasports_production
   username: tasports
-  password: federer 
+   
