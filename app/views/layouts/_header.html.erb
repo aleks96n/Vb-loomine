@@ -9,11 +9,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      
+
       <!-- logo -->
       <a class="navbar-brand" ><img alt="alternative text" src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Sport_balls.svg/400px-Sport_balls.svg.png"/></a>
     </div>
-    
+
     <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav animated fadeIn text16">
         <li><a href="#"><%=t 'sport.football' %></a></li>
@@ -21,11 +21,8 @@
         <li><a href="#"><%=t 'sport.tennis' %></a></li>
         <li><a href="#"><%=t 'sport.baseball' %></a></li>
         <li><a href="#"><%=t 'sport.volleyball' %></a></li>
-        <li><a href="#">Sport</a></li>
-        <li><a href="#">Sport</a></li>
-        <li><a href="#">Sport</a></li>
+
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <% if logged_in? %>
 
@@ -39,7 +36,7 @@
                 <% end %>
               <% end %>
             </li>
-            
+
             <li>
               <%= link_to "#{root_path}/login" do %>
                 <%=content_tag :span, :class => "glyphicon glyphicon-log-in" do %>
@@ -47,11 +44,11 @@
                 <% end %>
               <% end %>
             </li>
-            
+
             <li><a href="/auth/facebook"><i class="fa fa-facebook-official fa-1x" aria-hidden="true"></i></a></li>
             <li><a href="/auth/twitter"><i class="fa fa-th-large fa-twitter fa-1x" aria-hidden="true"></i> </a></li>
         <% end %>
-        
+
       </ul>
     </div>
   </div>
@@ -68,7 +65,7 @@
       </button>
       <a class="navbar-brand" >TASport</a>
     </div>
-    
+
     <div class="collapse navbar-collapse animated fadeIn" id="bs-example-navbar-collapse-2">
       <ul class="nav navbar-nav animated fadeIn">
         <li ><%= link_to 'English', url_for( :locale => 'en' ) %></li>
@@ -93,4 +90,3 @@
     </div>
   </div>
 </nav>
-
