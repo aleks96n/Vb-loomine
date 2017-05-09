@@ -8,6 +8,7 @@
   <%= csrf_meta_tags %>
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+   <%= javascript_include_tag "application", "data-turbolinks-track" => true, async: true %>
 
 
 
@@ -167,7 +168,7 @@ if('serviceWorker' in navigator) {
     <script type="text/javascript">
 function downloadJSAtOnload() {
 var element = document.createElement("script");
-element.src = "application-bf819418ad273e7e3d5531d6864b87866e5c9cb3abb595e76007d37bc9f0dfc5.js";
+element.src = "";
 document.body.appendChild(element);
 }
 if (window.addEventListener)
