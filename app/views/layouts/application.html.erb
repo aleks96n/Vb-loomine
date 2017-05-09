@@ -93,7 +93,7 @@
     </script>
     
     <!-- repassword checker -->
-    <script>
+    <script type="text/javascript">
         $(document).ready(function() {  
             $("#repass").keyup(function(){
                 var repass = $("#repass").val();
@@ -116,6 +116,15 @@
             });
         });
   </script> 
+  
+  <script type="text/javascript">
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/serviceworker.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
+
     
     <!-- popup -->
     <script type="text/javascript">

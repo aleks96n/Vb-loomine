@@ -30,4 +30,8 @@ module Tasports
 
     I18n.t :missing, default: 'Not here'
   end
+  
+  class Application < Rails::Application
+    config.middleware.use Rack::Deflater
+  end
 end
