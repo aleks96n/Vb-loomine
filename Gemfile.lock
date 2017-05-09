@@ -142,6 +142,7 @@ GEM
       rails-deprecated_sanitizer (>= 1.0.1)
     rails-html-sanitizer (1.0.3)
       loofah (~> 2.0)
+    rails-perftest (0.0.7)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -215,6 +216,7 @@ DEPENDENCIES
   omniauth-twitter
   puma
   rails (= 4.2.8)
+  rails-perftest
   rails_12factor
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
@@ -229,4 +231,4 @@ RUBY VERSION
    ruby 2.3.1p0 (jruby 9.1.7.0)
 
 BUNDLED WITH
-   1.14.4
+   1.14.6

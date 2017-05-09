@@ -8,7 +8,7 @@
   <%= csrf_meta_tags %>
   
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
-
+   <%= javascript_include_tag "application", "data-turbolinks-track" => true, async: true %>
 
 
   <!-- email checker -->
@@ -93,7 +93,7 @@
     </script>
     
     <!-- repassword checker -->
-    <script>
+    <script type="text/javascript">
         $(document).ready(function() {  
             $("#repass").keyup(function(){
                 var repass = $("#repass").val();
@@ -116,6 +116,15 @@
             });
         });
   </script> 
+  
+  <script type="text/javascript">
+if('serviceWorker' in navigator) {
+  navigator.serviceWorker
+           .register('/serviceworker.js')
+           .then(function() { console.log("Service Worker Registered"); });
+}
+</script>
+
     
     <!-- popup -->
     <script type="text/javascript">
@@ -154,6 +163,19 @@
     </div>
 
     <div id="page-preloader"><span class="spinner"></span></div>
+    
+    <script type="text/javascript">
+function downloadJSAtOnload() {
+var element = document.createElement("script");
+element.src = "";
+document.body.appendChild(element);
+}
+if (window.addEventListener)
+window.addEventListener("load", downloadJSAtOnload, false);
+else if (window.attachEvent)
+window.attachEvent("onload", downloadJSAtOnload);
+else window.onload = downloadJSAtOnload;
+</script>
 </body>
 
 </html>
