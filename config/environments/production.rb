@@ -79,5 +79,5 @@ Rails.application.configure do
   
   config.static_cache_control = "public, s-maxage=31536000, maxage=15552000"
   config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect'
-}
+
 end
