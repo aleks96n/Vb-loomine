@@ -6,10 +6,11 @@ Rails.application.routes.draw do
   get '/(:locale)/about' => 'welcome#about'
   get '/(:locale)/signup' => "users#new"
   get '/(:locale)/login' => "sessions#new"
-  get '/(:locale)/show/:id' => "users#show"
+  get '/(:locale)/users/:id' => "users#show"
   get '/auth/:provider/callback', to: 'sessions#createfb'
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
+  get '/(:locale)/show/:id/edit' => "users#edit"
 
   scope "(:locale)", locale: /en|ru|ee/ do
     root to: 'welcome#index'
@@ -20,7 +21,9 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
-  resources :users
+
+    resources :users
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
