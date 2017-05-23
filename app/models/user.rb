@@ -20,6 +20,7 @@ class User < ActiveRecord::Base
   def self.find_or_create_from_auth_hash(auth_hash)
     user = find_or_create_by(provider: auth_hash.provider, uid: auth_hash.uid)
     user.name = auth_hash.info.name
+    user.email = auth_hash.info.email 
     user.profile_image = auth_hash.info.image
     user.token = auth_hash.credentials.token    #user.secret = auth_hash.credentials.secret
     user.password = SecureRandom.urlsafe_base64

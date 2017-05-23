@@ -1,5 +1,5 @@
 <div class="login">
-   
+
     <% provide(:title, 'Sign up') %>
     <%=content_tag :h1 do %>
       <%=t 'log.signup' %>
@@ -11,7 +11,7 @@
       <div class="col-md-6 col-md-offset-0">
         <%= form_for(@user) do |f| %>
           <%= f.label t 'signup.name' %>
-          <%= f.text_field :name %>
+          <%= f.text_field :name, :id => "name" %>
 
             <br><br>
 
@@ -41,6 +41,3 @@
       </div>
     </div>
 </div>
- 
-  
- 

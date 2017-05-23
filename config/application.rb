@@ -12,7 +12,7 @@ module Tasports
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
-
+    config.serve_static_files = true
     #The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
      config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
 
@@ -30,7 +30,7 @@ module Tasports
 
     I18n.t :missing, default: 'Not here'
   end
-  
+
   class Application < Rails::Application
     config.middleware.use Rack::Deflater
   end

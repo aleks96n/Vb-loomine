@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get '/(:locale)/about' => 'welcome#about'
   get '/(:locale)/signup' => "users#new"
   get '/(:locale)/login' => "sessions#new"
-  get '/(:locale)/show' => "users#show"
+  get '/(:locale)/show/:id' => "users#show"
   get '/auth/:provider/callback', to: 'sessions#createfb'
   post '/login' => "sessions#create"
   delete '/logout' => "sessions#destroy"
